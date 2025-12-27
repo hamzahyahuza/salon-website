@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#C89B7B"> <!-- matches rose gold CTA -->
+
+    <title>Hairdresser Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <%- include('header') %>
+
+        <!-- Hero Section -->
+<section id="home" class="hero-section d-flex align-items-center justify-content-center text-center">
+  <div class="overlay"></div>
+  <div class="container hero-content">
+    <h1 class="display-4 fw-bold big-text">Transform Your Hair, Elevate Your Confidence</h1>
+    <p class="lead mb-4">
+      At <strong>Glow Hair Studio</strong>, we craft hairstyles that make you shine. 
+      From effortless elegance to bold transformations, your perfect look starts here.
+    </p>
+    <a href="#about-why" class="btn btn-primary btn-lg scroll-link">Book Your Luxury Experience</a>
+  </div>
+</section>
+
+    
+      <!-- About & Why Us Cards -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- About Us Card -->
+      <div class="col-md-6">
+        <div class="card about-why-card h-100 text-center p-4">
+          <h3 class="fw-bold mb-3">About Us</h3>
+          <p>
+            At <strong>Glow Hair Studio</strong>, we don’t just style hair — we design confidence.
+            Our expert stylists combine modern trends with timeless techniques to create looks
+            that feel effortless, elegant, and uniquely you.
+          </p>
+        </div>
+      </div>
+       
+      <!-- Why Us Card -->
+      <div class="col-md-6" id="why">
+        <div class="card about-why-card h-100 text-center p-4">
+          <h3 class="fw-bold mb-3">Why Choose Us</h3>
+          <p>
+            We listen first, style second. From precision cuts to flawless finishes,
+            our goal is simple: deliver hair you love today and confidence that lasts.
+            Trusted by hundreds of happy clients, we’re known for consistency, creativity,
+            and results that speak for themselves.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+    <!-- Gallery Slider -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4"><strong>Gallery</strong></h2>
+            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/images/e6ef6ddb-2300-44c8-b073-1bcd04dff6b8-MedusaUltimateTsimiski-GR-FreshaC.avif" class="d-block w-100" alt="Gallery 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/e6ef6ddb-2300-44c8-b073-1bcd04dff6b8-MedusaUltimateTsimiski-GR-FreshaC.avif" class="d-block w-100" alt="Gallery 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/images/049bca79-6e77-4a4c-befa-5874b525438f-MedusaUltimateTsimiski-GR-FreshaC.avif" class="d-block w-100" alt="Gallery 3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-targetimages/33b3326f-39c3-4bf9-adbe-88743e2="#galleryCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+         
+       <!-- Testimonials -->
+<section id="testimonials" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4 fw-bold">What Our Clients Say</h2>
+
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+
+        <!-- Testimonial 1 -->
+        <div class="carousel-item active">
+          <img src="/images/c1.jpg" class="rounded-circle mb-3 testimonial-img" alt="Client 1">
+          <h5 class="mb-1">Sofia Kim</h5>
+          <p class="text-warning mb-2">⭐ ⭐ ⭐ ⭐ ⭐</p>
+          <p class="mx-auto" style="max-width: 600px;">
+            “Absolutely loved my hair! The team made me feel comfortable,
+            listened to exactly what I wanted, and delivered beyond expectations.”
+          </p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="carousel-item">
+          <img src="/images/c2.jpg" class="rounded-circle mb-3 testimonial-img" alt="Client 2">
+          <h5 class="mb-1">Maya Chen</h5>
+          <p class="text-warning mb-2">⭐ ⭐ ⭐ ⭐ ⭐</p>
+          <p class="mx-auto" style="max-width: 600px;">
+            “Best salon experience I’ve ever had. Professional, friendly,
+            and the results were stunning. Highly recommended!”
+          </p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="carousel-item">
+          <img src="/images/c537.jpg" class="rounded-circle mb-3 testimonial-img" alt="Client 3">
+          <h5 class="mb-1">Ethan Rodriguez</h5>
+          <p class="text-warning mb-2">⭐ ⭐ ⭐ ⭐ ⭐</p>
+          <p class="mx-auto" style="max-width: 600px;">
+            “From consultation to final look, everything was perfect.
+            I walked out feeling confident and refreshed.”
+          </p>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+    <%- include('footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html> 

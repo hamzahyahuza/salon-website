@@ -1,0 +1,252 @@
+/* ================================
+   BRAND COLOR SYSTEM
+================================ */
+:root {
+  --color-primary: #C89B7B;   /* Rose Gold - CTA */
+  --color-secondary: #2B2B2B; /* Deep Charcoal - Headings, footer */
+  --color-accent: #F3D9C9;    /* Soft Blush - Highlights, hover */
+  --color-bg: #FAF7F4;        /* Warm Ivory - Background */
+  --color-text: #555555;      /* Muted Gray - Body text */
+}
+
+/* ================================
+   GENERAL STYLES
+================================ */
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-secondary);
+}
+
+/* ================================
+   HERO SECTION
+================================ */
+.hero-section {
+  background-image: url("/images/33b3326f-39c3-4bf9-adbe-88743e2871ec.avif");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+  color: white;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* overlay for text readability */
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+.btn-primary {
+  background-color: var(--color-primary);
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #b18567; /* Slightly darker rose gold */
+  transform: translateY(-2px);
+}
+
+/* ================================
+   NAVBAR
+================================ */
+.navbar {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .nav-link {
+  transition: color 0.3s ease, transform 0.3s ease;
+  color: var(--color-secondary) !important;
+}
+
+.navbar .nav-link:hover {
+  color: var(--color-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* ================================
+   SECTIONS
+================================ */
+.bg-light {
+  background-color: var(--color-accent) !important;
+}
+
+/* ================================
+   TESTIMONIAL CAROUSEL
+================================ */
+.testimonial-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#testimonialCarousel .carousel-item {
+  padding: 20px 0;
+}
+
+#testimonialCarousel h5 {
+  font-weight: 600;
+}
+
+#testimonialCarousel p.text-warning {
+  color: var(--color-primary) !important; /* stars */
+}
+
+/* ================================
+   FOOTER
+================================ */
+footer {
+  background-color: var(--color-secondary);
+  color: var(--color-accent);
+  text-align: center;
+  padding: 50px 20px;
+}
+
+footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--color-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* Optional luxury touch: subtle footer gradient */
+footer {
+  background: linear-gradient(135deg, var(--color-secondary), #1f1f1f);
+}
+
+/* ================================
+   GALLERY CAROUSEL
+================================ */
+carousel-item img{
+  height: 500px;
+  object-fit: cover;
+}
+
+/* ================================
+   MOBILE RESPONSIVENESS
+================================ */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+  }
+
+  #testimonialCarousel .carousel-item p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Cards for About & Why Us */
+.about-why-card {
+  background-color: var(--color-bg); /* warm ivory */
+  border: 2px solid transparent;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.about-why-card:hover {
+  border-color: var(--color-primary); /* rose gold border on hover */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+}
+
+.about-why-card h3 {
+  color: var(--color-secondary);
+}
+
+.about-why-card p {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Responsive stacking */
+@media (max-width: 768px) {
+  .about-why-card {
+    margin-bottom: 20px;
+  }
+}
+
+.big-text{
+    color: #D9CFC7;
+}
+
+.nav-link{
+    font-size: medium;
+}
+
+/* Initial state for animation */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+/* Animate class when section enters viewport */
+section.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Testimonial Images */
+.testimonial-img {
+  width: 100px;          /* smaller, passport-like */
+   height: 100px;        /* keep square for perfect circle */
+  object-fit: cover;    /* crop to fill the circle */
+  border-radius: 20%;   /* perfect circle */
+  border: 2px solid var(--color-primary); /* optional luxury rose-gold border */
+  padding: 2px;         /* optional spacing between image and border */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow for depth */
+  margin-bottom: 15px;  /* spacing from name */
+}
+
+#testimonialCarousel .carousel-item {
+  padding: 10px 0;  /* reduced from 20px */
+}
+
+.testimonial-img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: #b18567; /* Luxury rose-gold hover */
+    transition: color 0.3s ease;
+}
