@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3000;
+const POST = process.env.PORT || 3000;
 
 // Routes
 import indexRouter from './routes/index.js';
@@ -23,5 +23,5 @@ app.use('/', indexRouter);
 
 // Start server
 app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${POST}`);
 });
