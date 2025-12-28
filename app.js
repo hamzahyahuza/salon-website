@@ -2,26 +2,40 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+// Fix __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Create app
 const app = express();
 
-// Routes
+// Import routes
 import indexRouter from './routes/index.js';
 
-// Set view engine
+// App config
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Serve static files
+// Middleware
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// Use routes
+// Routes
 app.use('/', indexRouter);
 
-// Start server
+// Port (Railway compatible)
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+
+// Start server
+const server = app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
+
+// Graceful shutdown (Railway / Docker)
+process.on('SIGTERM', () => {
+  console.log('🛑 SIGTERM received. Shutting down...');
+  server.close(() => {
+    process.exit(0);
+  });
 });
